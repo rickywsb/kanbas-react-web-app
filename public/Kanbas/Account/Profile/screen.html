@@ -1,49 +1,119 @@
-<table width="100%" board="1">
-    <tr>
-        <td valign="top">
-            <ul>
-                <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="/Kanbas/Courses/Home/home.html">Courses</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
-
-        <td valign="top">
-            <ul>
-                <li><a href="#">Notifications</a></li>
-                <li><a href="/Kanbas/Account/Profile/screen.html">Profile</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">ePortfolios</a></li>
-                <li><a href="#">Shared Content</a></li>
-                <li><a href="#">The Hub</a></li>
-                <li><a href="#">Quickly Course Tools</a></li>
-                <li><a href="#">Global Announcements</a></li>
-            </ul>
-        </td>
-
-        <td valign="top">
-        Sibo Wu
-        <hr />
-
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css">
+        <link rel="stylesheet" href="/Kanbas/Account/AccountNavigation/index.css">
+        <link rel="stylesheet" href="/Kanbas/Account/Profile/index.css">
+        <link rel="stylesheet" href="/vendors/font-awesome/css/all.css">
+        <link rel="stylesheet" href="/vendors/font-awesome/css/fontawesome.css">
+        <link rel="stylesheet" href="/vendors/fontawesome/css/all.css">
+        <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.css">
         
-        <form action="/Kanbas/Account/Profile/EditProfile/screen.html">
-            <h2 style="display: inline;">Sibo Wu</h2> 
-            <button style="float: right;"> Edit Profile</button>
-        </form>
-        <h3>Contact</h3>
-        No registered contact information. you can add some on <a href="#">settings</a>
 
-        <h3>Biography</h3>
-        Just a student at Northeastern University.<br />
+    </head>
+    <body>
+        
+        <div class="wd-flex-row-container">
+            <div class="wd-bg-color-black d-none d-md-block">
+                <ul class="wd-kanbas-navigation">
+                    <li  class="wd-active"><a href="/Kanbas/Account/Profile/screen.html"  class="account-icon">
+                        <i class="fas fa-user-circle" style="color: #d3d3d3;"></i>                
+                        Account
+                    </a></li>
+                    <li><a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fa-solid fa-gauge"></i>       
+                        Dashboard
+                    </a></li>
+                    <li><a href="/Kanbas/Courses/Home/home.html">
+                        <i class="fa-solid fa-book"></i>
+                        Courses
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-regular fa-calendar-days"></i>       
+                         Calendar
+                    </a>
+                    </li>
+                    <li><a href="#">
+                        <i class="fa-solid fa-inbox"></i>
+                
+                        Inbox
+                    </a>
+                    </li>
+                    <li><a href="#">
+                        <i class="fa-regular fa-clock"></i>
+                        History
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-solid fa-tv"></i>
+                        Studio
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-regular fa-comment"></i>
+                        Commons
+                    </a></li>
+                    <li> <a href="#">
+                        <i class="fa-solid fa-question"></i>
+                        
+                        Help
+                    </a></li>
+                </ul>
+        </div>
+        
+            
+            
+        <div>
+                    <ul class="wd-account-navigation">
+                    <li><a href="#">Notifications</a></li>
+                    <li class="wd-active"><a href="/Account/Profile/index.html">Profile</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">ePortfolios</a></li>
+                    <li><a href="#">Shared Content</a></li>
+                    <li><a href="#">The Hub</a></li>
+                    <li><a href="#">Quickly Course Tools</a></li>
+                    <li><a href="#">Global Announcements</a></li>
+                
+                    </ul>
+        </div>
+        <div>
+                    <div class="profile-section">
+                        <!-- Account Icon -->
+                        <div class="account-icon">
+                            <i class="fas fa-user fa-3x"></i>
+                            <h2>Sibo Wu</h2>
+                        </div>
+                    
+                        <!-- Edit Profile Button -->
+                        <form action="/Kanbas/Account/Profile/EditProfile/screen.html" class="edit-profile-form float-end">
+                            <button class="btn btn-light">
+                                <i class="fas fa-pencil-alt"></i> Edit Profile
+                            </button>
+                        </form>
+                    
+                        <div class="clearfix"></div>
+                    
+                        <!-- Contact Section -->
+                        <div class="contact-section section">
+                            <h3>Contact</h3>
+                            <p>No registered contact information. You can add some in <a href="#">settings</a>.</p>
+                        </div>
+                    
+                        <!-- Biography Section -->
+                        <div class="biography-section section">
+                            <h3>Biography</h3>
+                            <p>Just a student at Northeastern University.</p>
+                        </div>
+                    
+                        <!-- Links Section -->
+                        <div class="links-section section">
+                            <h3>Links</h3>
+                            <p><a href="https://www.youtube.com/">YouTube Channel</a></p>
+                        </div>
+                    </div>
+        </div>
+           
+        
 
-        <h3>Links</h3>
-        No registered links.<br />
-        </td>
-    </tr>
-</table>
+     
+    </body>
+</html>

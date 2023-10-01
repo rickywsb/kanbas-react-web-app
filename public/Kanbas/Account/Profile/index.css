@@ -1,0 +1,45 @@
+
+
+.profile-section {
+    width: 100%;
+    padding: 20px;
+    padding-top: 60px; /* Added padding to make space for the Cancel Editing button */
+    position: relative; /* To position the Cancel Editing button */
+}
+
+.account-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.edit-profile-form .btn {
+    margin-top: 20px; /* Adjusted margin */
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+}
+
+.section {
+    margin-top: 30px; /* Adjust this value to increase or decrease the space between sections */
+}
+
+/* Additional styles for the Cancel Editing button at the top right */
+.profile-section > .btn.btn-light {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* Adjustments for the Add another link and Save Profile buttons */
+.edit-profile-form .form-group:last-child {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    gap: 10px; /* Space between buttons */
+}
+

@@ -45,3 +45,7 @@
 .wd-kanbas-navigation a.account-icon i {
     color: white;
 }
+
+.wd-kanbas-navigation li.wd-active a.account-icon i {
+    color: black;  
+}

@@ -1,4 +1,254 @@
-<table width="100%" board="1">
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css">
+    <link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css">
+    <link rel="stylesheet" href="/vendors/font-awesome/css/all.css">
+    <link rel="stylesheet" href="/vendors/font-awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/vendors/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css">
+  </head>
+  <body>
+    <div class="wd-flex-row-container">
+      <div class="wd-bg-color-black d-none d-md-block">
+          <ul class="wd-kanbas-navigation">
+              <li><a href="/Kanbas/Account/Profile/screen.html"  class="account-icon">
+                  <i class="fas fa-user-circle" style="color: #d3d3d3;"></i>
+                  Account
+              </a></li>
+              <li><a href="/Kanbas/Dashboard/screen.html">
+                  <i class="fa-solid fa-gauge"></i>       
+                  Dashboard
+              </a></li>
+              <li class="wd-active"><a href="/Kanbas/Courses/Home/home.html">
+                  <i class="fa-solid fa-book"></i>
+                  Courses
+              </a></li>
+              <li><a href="#">
+                  <i class="fa-regular fa-calendar-days"></i>       
+                   Calendar
+              </a>
+              </li>
+              <li><a href="#">
+                  <i class="fa-solid fa-inbox"></i>
+          
+                  Inbox
+              </a>
+              </li>
+              <li><a href="#">
+                  <i class="fa-regular fa-clock"></i>
+                  History
+              </a></li>
+              <li><a href="#">
+                  <i class="fa-solid fa-tv"></i>
+                  Studio
+              </a></li>
+              <li><a href="#">
+                  <i class="fa-regular fa-comment"></i>
+                  Commons
+              </a></li>
+              <li> <a href="#">
+                  <i class="fa-solid fa-question"></i>
+                  
+                  Help
+              </a></li>
+          </ul>
+      </div>
+
+        <div class="w-100 custom-breadcrumb"> <!-- 这个类确保面包屑导航占据整个宽度 -->
+          <ol class="breadcrumb custom-breadcrumb">
+              <li class="breadcrumb-item"><a href="#">CS5610.11744.30</a></li>
+              <li class="breadcrumb-item active" aria-current="page">  Assignments</li>
+          </ol>
+          <hr/> <!-- 横线 -->
+        <div class="d-flex flex-row">
+
+          <div>
+            <ul class="wd-course-navigation">
+              <li><a href="/Kanbas/Courses/Home/home.html">Home</a></li>
+              <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
+              <li><a href="#">Piazza</a></li>
+              <li><a href="#">Zoom Meetings</a></li>
+              <li  class="wd-active"><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+              <li><a href="#">Quizzes</a></li>
+              <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+              <li><a href="#">People</a></li>
+              <li><a href="#">Panopto Video</a></li>
+              <li><a href="#">Discussion</a></li>
+              <li><a href="#">Announcements</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><a href="#">Files</a></li>
+              <li><a href="#">Rubrics</a></li>
+              <li><a href="#">Outcomes</a></li>
+              <li><a href="#">Collaborations</a></li>
+              <li><a href="#">Syllabus</a></li>
+              <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+            </ul>
+          </div>
+          <div class="container-fluid">
+            <div class="mb-3">
+                <!-- Search and Buttons -->
+                <div class="d-flex justify-content-between align-items-center">
+                    <input type="text" class="form-control w-25" placeholder="Search for Assignments">
+                    <div class="btn-group float-end">
+                        <button class="btn btn-light"><i class="fas fa-plus"></i> Group</button>
+                        <button class="btn btn-danger"><i class="fas fa-plus"></i> Assignment</button>
+                        <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i>  <!-- Vertical ellipsis -->
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Edit Assignment Dates</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+
+            <ul class="list-group">
+              <!-- First Row -->
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <!-- Left Icons and Text -->
+                  <div class="d-flex align-items-center">
+                    <i class="fas fa-ellipsis-v icon-spacing"></i><!-- 8 ellipses icon -->
+                      <i class="fas fa-caret-down icon-spacing"></i> <!-- Downward triangle icon -->
+                      <span>Assignments</span>
+                  </div>
+          
+                  <!-- Right Icons and Text -->
+                  <div class="d-flex align-items-center">
+                      <button class="btn btn-light border-rounded">40% of Total</button>
+                      <i class="fas fa-plus icon-spacing"></i> <!-- Plus sign icon -->
+                      <i class="fas fa-ellipsis-v "></i><!-- 8 ellipses icon -->                 
+                  </div>
+              </li>
+          
+              <!-- Sample Assignment Row -->
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <!-- Left Side Content -->
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-ellipsis-v icon-spacing"></i> <!-- Vertical ellipses icon -->
+                    <i class="fas fa-book text-success icon-spacing"></i> <!-- Green book icon -->
+                    <span>A1 - SetUp
+                      <br>
+                      <small class="text-muted">Due: 10/10/2023, 10:00 AM, 100 points</small> 
+
+                    </span>
+                </div>
+            
+                <!-- Right Side Content -->
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-check text-success icon-spacing"></i> <!-- Green check icon -->
+                    <i class="fas fa-ellipsis-v"></i> <!-- Vertical ellipses icon -->
+                </div>
+            </li>
+              <!-- You can add more assignment rows as needed -->
+
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <!-- Left Side Content -->
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-ellipsis-v icon-spacing"></i> <!-- Vertical ellipses icon -->
+                    <i class="fas fa-book text-success icon-spacing"></i> <!-- Green book icon -->
+                    <span>A2 - Html
+                      <br>
+                      <small class="text-muted">Due: 10/10/2023, 10:00 AM, 100 points</small> 
+                    </span>
+                </div>
+            
+                <!-- Right Side Content -->
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-check text-success icon-spacing"></i> <!-- Green check icon -->
+                    <i class="fas fa-ellipsis-v"></i> <!-- Vertical ellipses icon -->
+                </div>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <!-- Left Side Content -->
+              <div class="d-flex align-items-center">
+                  <i class="fas fa-ellipsis-v icon-spacing"></i> <!-- Vertical ellipses icon -->
+                  <i class="fas fa-book text-success icon-spacing"></i> <!-- Green book icon -->
+                  <span>A3 - CSS
+                    <br>
+                      <small class="text-muted">Due: 10/10/2023, 10:00 AM, 100 points</small> 
+                  </span>
+              </div>
+          
+              <!-- Right Side Content -->
+              <div class="d-flex align-items-center">
+                  <i class="fas fa-check text-success icon-spacing"></i> <!-- Green check icon -->
+                  <i class="fas fa-ellipsis-v"></i> <!-- Vertical ellipses icon -->
+              </div>
+          </li>
+
+
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <!-- Left Side Content -->
+            <div class="d-flex align-items-center">
+                <i class="fas fa-ellipsis-v icon-spacing"></i> <!-- Vertical ellipses icon -->
+                <i class="fas fa-book text-success icon-spacing"></i> <!-- Green book icon -->
+                <span>A4 - BootStrap
+                  <br>
+                      <small class="text-muted">Due: 10/10/2023, 10:00 AM, 100 points</small> 
+                </span>
+            </div>
+        
+            <!-- Right Side Content -->
+            <div class="d-flex align-items-center">
+                <i class="fas fa-check text-success icon-spacing"></i> <!-- Green check icon -->
+                <i class="fas fa-ellipsis-v"></i> <!-- Vertical ellipses icon -->
+            </div>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <!-- Left Side Content -->
+          <div class="d-flex align-items-center">
+              <i class="fas fa-ellipsis-v icon-spacing"></i> <!-- Vertical ellipses icon -->
+              <i class="fas fa-book text-success icon-spacing"></i> <!-- Green book icon -->
+              <span>A5 - JavaScript
+                <br>
+                      <small class="text-muted">Due: 10/10/2023, 10:00 AM, 100 points</small> 
+              </span>
+          </div>
+      
+          <!-- Right Side Content -->
+          <div class="d-flex align-items-center">
+              <i class="fas fa-check text-success icon-spacing"></i> <!-- Green check icon -->
+              <i class="fas fa-ellipsis-v"></i> <!-- Vertical ellipses icon -->
+          </div>
+      </li>
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <!-- Left Side Content -->
+        <div class="d-flex align-items-center">
+            <i class="fas fa-ellipsis-v icon-spacing"></i> <!-- Vertical ellipses icon -->
+            <i class="fas fa-book text-success icon-spacing"></i> <!-- Green book icon -->
+            <span>A6 - React
+              <br>
+                      <small class="text-muted">Due: 10/10/2023, 10:00 AM, 100 points</small> 
+            </span>
+        </div>
+    
+        <!-- Right Side Content -->
+        <div class="d-flex align-items-center">
+            <i class="fas fa-check text-success icon-spacing"></i> <!-- Green check icon -->
+            <i class="fas fa-ellipsis-v"></i> <!-- Vertical ellipses icon -->
+        </div>
+    </li>
+
+          </ul>
+        </div>
+            <hr/>
+        
+          
+
+
+      </div>
+    </div>
+    </div>
+
+  </body>
+</html>
+<!-- <table width="100%" board="1">
     <tr>
         <td valign="top">
             <ul>
@@ -161,4 +411,4 @@
         </ul>
         </td> 
     </tr>
-</table>
+</table> -->

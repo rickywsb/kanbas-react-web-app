@@ -1,4 +1,166 @@
-<table width="100%" board="1">
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css">
+        <link rel="stylesheet" href="/Kanbas/Account/AccountNavigation/index.css">
+        <link rel="stylesheet" href="/Kanbas/Account/Profile/index.css">
+        <link rel="stylesheet" href="/vendors/font-awesome/css/all.css">
+        <link rel="stylesheet" href="/vendors/font-awesome/css/fontawesome.css">
+        <link rel="stylesheet" href="/vendors/fontawesome/css/all.css">
+        <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.css">
+    </head>
+    <body>
+        
+        <div class="wd-flex-row-container">
+            <div class="wd-bg-color-black d-none d-md-block">
+                <ul class="wd-kanbas-navigation">
+                    <li  class="wd-active"><a href="/Kanbas/Account/Profile/screen.html"  class="account-icon">
+                        <i class="fas fa-user-circle" style="color: #d3d3d3;"></i>
+                        Account
+                    </a></li>
+                    <li><a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fa-solid fa-gauge"></i>       
+                        Dashboard
+                    </a></li>
+                    <li><a href="/Kanbas/Courses/Home/home.html">
+                        <i class="fa-solid fa-book"></i>
+                        Courses
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-regular fa-calendar-days"></i>       
+                         Calendar
+                    </a>
+                    </li>
+                    <li><a href="#">
+                        <i class="fa-solid fa-inbox"></i>
+                
+                        Inbox
+                    </a>
+                    </li>
+                    <li><a href="#">
+                        <i class="fa-regular fa-clock"></i>
+                        History
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-solid fa-tv"></i>
+                        Studio
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-regular fa-comment"></i>
+                        Commons
+                    </a></li>
+                    <li> <a href="#">
+                        <i class="fa-solid fa-question"></i>
+                        
+                        Help
+                    </a></li>
+                </ul>
+        </div>
+        <div>
+            <ul class="wd-account-navigation">
+            <li><a href="#">Notifications</a></li>
+            <li class="wd-active"><a href="/Account/Profile/index.html">Profile</a></li>
+            <li><a href="#">Files</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">ePortfolios</a></li>
+            <li><a href="#">Shared Content</a></li>
+            <li><a href="#">The Hub</a></li>
+            <li><a href="#">Quickly Course Tools</a></li>
+            <li><a href="#">Global Announcements</a></li>
+        
+            </ul>
+        </div>
+            <div class="profile-container">
+                <!-- Account Icon and Name -->
+                <div class="account-icon">
+                    <i class="fas fa-user fa-3x"></i>
+                    <h2>Sibo Wu</h2>
+                </div>
+
+                <!-- Cancel Editing Button at the top right -->
+                <a href="/Kanbas/Account/Profile/screen.html" class="float-end">
+                    <button type="button" class="btn btn-light">
+                        <i class="fas fa-pencil-alt"></i> Cancel Editing
+                    </button>
+                </a>
+            
+                <div class="clearfix"></div> <!-- Clear the float -->
+
+        
+                <!-- Edit Profile Form -->
+                <form action="/Kanbas/Account/Profile/screen.html" class="edit-profile-form">
+                    <div class="form-group">
+                        <label for="name">Name:*</label>
+                        <input type="text" placeholder="Sibo Wu" id="name" name="name" class="form-control" />
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="pronoun">Pronoun:</label>
+                        <select class="form-control">
+                            <option>He/Him/His</option>
+                            <option>She/Her/Hers</option>
+                            <option>They/Them/Theirs</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" class="form-control" />
+                    </div>
+        
+                    <!-- Contact Section -->
+                    <div class="contact-section section form-group">
+                        <h3>Contact</h3>
+                        <p>No registered contact information. You can add some in <a href="#">settings</a>.</p>
+                    </div>
+        
+                    <!-- Biography Section -->
+                    <div class="biography-section section form-group">
+                        <h3>Biography</h3>
+                        <textarea class="form-control">Just a student at Northeastern University.</textarea>
+                    </div>
+        
+                    <!-- Links Section -->
+                    <div class="links-section section form-group">
+                        <h3>Links</h3>
+                        <ul>
+                            <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
+                        </ul>
+                    <div class="row">
+                        <div class="col">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" value="YouTube" class="form-control">
+                            <button class="btn btn-light mt-2">Add another link</button>
+                        </div>
+                    <div class="col">
+                        <label for="link">Link</label>
+                        <input type="text" id="link" name="link" value="https://www.youtube.com/" class="form-control">
+                    </div>
+                </div>
+            
+        </div>
+        
+                   
+                     <!-- Buttons at the bottom -->
+                    <div class="form-group mt-3 text-end">
+                    <a href="/Kanbas/Account/Profile/screen.html" class="btn btn-light">
+                        Cancel
+                    </a>
+                    <button type="submit" class="btn btn-danger ml-2">
+                    <i class="fas fa-pencil-alt"></i> Save Profile
+                    </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
+     
+    </body>
+</html>
+
+<!-- <table width="100%" board="1">
     <tr>
         <td valign="top">
             <ul>
@@ -67,4 +229,4 @@
             </ul>
         <td />
     </tr>
-</table>
+</table> -->

@@ -1,31 +1,31 @@
-.wd-course-navigation{
+.wd-account-navigation{
     background-color: white;
     list-style: none;
-    padding:0px;
-    width: 120px;
+    padding:15px;
+    width: 190px;
     margin:0px;
     margin-left: 20px;
     margin-right: 50px;
 
 }
 
-.wd-course-navigation li{
+.wd-account-navigation li{
+    text-align: left;
     padding-left: 15px;
     margin-bottom: 15px;
     margin-top: 15px;
-    /* font-size: 0.8em; */
-    /* text-align: center; */
+    
 }
 
-.wd-course-navigation li.wd-active{
+.wd-account-navigation li.wd-active{
    border-left:2px solid black;
 }
 
-.wd-course-navigation li.wd-active a{
+.wd-account-navigation li.wd-active a{
     color:black;
  }
 
-.wd-course-navigation a{
+.wd-account-navigation a{
     color: red;
     text-decoration: none;
 }
