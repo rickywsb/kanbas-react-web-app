@@ -1,0 +1,20 @@
+.icon-spacing {
+    margin-right: 5px;
+}
+
+.green-border-left {
+    border-left: 3px solid green;
+    padding-left: 10px;
+}
+.content-indent {
+    margin-left: 40px;
+}
+
+.bordered-list li {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+.bordered-list li:last-child {
+    border-bottom: none;
+}

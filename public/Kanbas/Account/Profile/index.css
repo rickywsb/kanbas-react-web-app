@@ -17,6 +17,11 @@
     margin-top: 20px; /* Adjusted margin */
 }
 
+.custom-padding {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 .btn-light {
     background-color: #f8f9fa;
 }
@@ -42,4 +47,14 @@
     justify-content: flex-end; /* Align items to the right */
     gap: 10px; /* Space between buttons */
 }
+
+.float-end {
+    position: absolute; /* 使用绝对定位 */
+    top: 10px; /* 距离容器顶部的距离 */
+    right: 10px; /* 距离容器右侧的距离 */
+}
+
+
+
+
 

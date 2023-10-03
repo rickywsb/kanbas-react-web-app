@@ -57,10 +57,13 @@
         </div>
   
           <div class="w-100 custom-breadcrumb"> <!-- 这个类确保面包屑导航占据整个宽度 -->
-            <ol class="breadcrumb custom-breadcrumb">
-                <li class="breadcrumb-item"><a href="#">CS5610.11744.30</a></li>
-                <li class="breadcrumb-item active" aria-current="page">  A1 HTML</li>
-            </ol>
+            <div class="d-flex align-items-center">
+                <i class="fas fa-bars text-danger mr-3" style="margin-right: 15px;"></i>
+                <ol class="breadcrumb custom-breadcrumb mb-0">
+                  <li class="breadcrumb-item"><a href="#">CS5610.11744.30</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">  Assignments</li>
+                </ol>
+              </div>
             <hr/> <!-- 横线 -->
           <div class="d-flex flex-row">
   
@@ -199,7 +202,64 @@
                     </div>
                 </div>
 
+                <div class="row mb-3">
+                    <!-- Left Column -->
+                    <div class="col-md-3">
+                        <label for="assignTo">Assign</label>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="col-md-9">
+                        <div class="mb-2">
+                            <strong>Assign To</strong>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="assignToEveryone" name="assignToEveryone" value="Everyone">
+                            <label for="assignToEveryone">Everyone</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label for="dueDate">Due</label>
+                                <input type="date" class="form-control" id="dueDate">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="untilDate">Until</label>
+                                <input type="date" class="form-control" id="untilDate">
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="availableFromDate">Available from</label>
+                            <input type="date" class="form-control" id="availableFromDate">
+                        </div>
+                    </div>
+                </div>
 
+
+                <div class="row mb-3">
+                    <div class="col-md-3"></div> <!-- 空的左列，与上面的标签列对齐 -->
+                    <div class="col-md-9">
+                        <button class="btn btn-secondary w-100">
+                            <i class="fas fa-plus"></i> ADD
+                        </button>
+                    </div>
+                </div>
+
+                <hr class="mt-5 mb-4"> <!-- 横线，上下都有一些间距 -->
+
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <input type="checkbox" id="notifyChange" name="notifyChange">
+                        <label for="notifyChange">Notify user that this box has changed</label>
+                    </div>
+                    <!-- <div class="col-md-6 text-end">
+                        <button class="btn btn-light">Cancel</button>
+                        <button class="btn btn-danger">Save</button>
+                    </div> -->
+                    <div class="col-md-6 text-end">
+                        <a href="/Kanbas/Courses/Assignments/screen.html" class="btn btn-light">Cancel</a>
+                        <a href="/Kanbas/Courses/Assignments/screen.html" class="btn btn-danger">Save</a>
+                    </div>
+                </div>
                 </div>
 
                 
@@ -207,113 +267,3 @@
               </div>
   </body>
 </html>
-
-<!-- <table width="100%" boarder="1">
-    <tr>
-        <td valign="top">
-            <ul>
-                <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-                <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-                <li><a href="/Kanbas/Courses/Home/home.html">Courses</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
-        <td valign="top">
-            <ul>
-                <li><a href="/Kanbas/Courses/Home/home.html">Home</a></li>
-                <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom Meetings</a></li>
-                <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto Video</a></li>
-                <li><a href="#">Discussion</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Rubrics</a></li>
-                <li><a href="#">Outcomes</a></li>
-                <li><a href="#">Collaborations</a></li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="#">Settings</a></li>
-            </ul>
-      
-
-        <td valign="top">
-            <select>
-                <option>SpeedGrader</option>
-              </select>
-            <hr />
-            <label for="assignmentName"><h2>Assignment Name</h2></label>
-            <input value="Assignment 1-HTML" id="assignmentName" placeholder="Assignment name"/> 
-            <h3>description</h3>
-            <textarea cols="50" rows="5">This is the assignment description</textarea> <br />
-            
-            Points <br />
-            <input value="100" type="number" max="100" min="20" step="5"/> <br /><br />
-            
-            Assignment Group <br />
-            <select>
-                <option>ASSIGNMENTS</option>
-              </select>  <br /><br />
-            
-            Display Grade as <br />
-            <select>
-                <option>percentage</option>
-            </select>  <br /><br />
-            
-            Submission Type <br />
-            <select>
-                <option>online</option>
-            </select> <br /><br />
-            
-            Online Entry Options <br />
-            <input type="checkbox"/> Text Entry <br /> <input type="checkbox"/> Website URL <br /><input type="checkbox" /> Media Recordings <br /> <input type="checkbox"/> Student Annonations <br /> <input type="checkbox"/> File Upload <br /><br />
-            
-            Submission Attemps <br />
-            <select>
-                <option>Unlimited</option>
-            </select> <br /><br />
-            
-            Plagiarism Review <br />
-            <select>
-                <option>None</option>
-            </select> <br /><br />
-            
-            Group Assignment <br />
-            <input type="checkbox"/> This is a Group Assignment  <br /><br />
-            
-            Peer Review <br />
-            <input type="checkbox"/> Required Peer Reviews  <br /><br />
-            
-            Assign <br />
-            Assign to <br />
-            <input type="text" value="Everyone"/>   <br /><br />
-            
-            Due  <br />
-            <input type="date" value="2021-01-01" min="2019-01-01"/> <br /><br />
-            
-            Available from <br />
-            <input type="date" value="2021-01-01" min="2021-01-01"/> <br /><br />
-            
-            Until <br />
-            <input type="date" value="2021-01-01" /> <br /> <br />
-
-            <form action="/Kanbas/Courses/Assignments/screen.html">
-                <button>cancel</button> <button>save</button>
-            </form>
-            
-            <!-- <form action="/Kanbas/Courses/Assignments/screen.html">
-                <button>save</button>
-            </form> -->
-<!--            
-        </td>
-       
-    </tr>
-</table>  -->

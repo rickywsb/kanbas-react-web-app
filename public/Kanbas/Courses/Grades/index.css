@@ -45,5 +45,30 @@
     text-decoration: none !important;
 }
 
+.course-sidebar {
+    padding-right: 5px; /* 调整右侧的padding */
+}
 
+.main-content {
+    padding-left: 5px; /* 调整左侧的padding */
+}
 
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.custom-padding {
+    padding-right: 15px; /* 或您想要的任何其他值 */
+}
+
+.custom-grid {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+}
