@@ -1,0 +1,55 @@
+/* CSS */
+.fixed-width-btn {
+    width: 200px !important;
+    position: relative;
+    text-align: left; /* Ensure text is left-aligned */
+    color: black;
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px; /* Space for the icon */
+    background-color: white; /* Set background to white */
+    border: 1px solid #e0e0e0; /* Light gray border */
+}
+
+.save-btn {
+    background-color: red;
+    color: white;
+    
+    text-align: center;
+    border: none;
+    text-decoration: none; /* Remove underline */
+}
+
+.save-btn-text {
+    padding-left: 8px;  /* Adjust left padding as needed */
+    padding-right: 8px;  /* Adjust right padding as needed */
+}
+
+.navigation-list li {
+    list-style-type: none;
+    margin-bottom: 2px;
+}
+
+.navigation-list a {
+    background-color: #f8f9fa; /* Bootstrap's light gray */
+    padding: 5px 1px;
+    border: 1px solid #dee2e6; /* Bootstrap's gray border */
+    border-radius: 5px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    color: black;
+    text-decoration: none; /* Remove underline */
+}
+
+.fixed-width-btn i {
+   
+    font-size: 0.75em; /* Adjust the size of the icon */
+    position: absolute; /* Set the icon to absolute positioning */
+    right: 10px; /* Adjust the distance from the right edge of the button */
+    top: 50%; /* Center the icon vertically */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+}
+
