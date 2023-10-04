@@ -54,6 +54,18 @@
     right: 10px; /* 距离容器右侧的距离 */
 }
 
+.red-link {
+    color: red;
+}
+
+.no-underline {
+    text-decoration: none !important;
+   
+}
+
+.red-icon {
+    color: red;
+}
 
 
 
