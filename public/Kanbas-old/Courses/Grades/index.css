@@ -1,0 +1,74 @@
+.list-group-item {
+    border-radius: 0;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.list-group-item {
+    border-left: 5px solid green;
+}
+
+.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d; /* 这是Bootstrap默认的颜色，您可以根据需要更改 */
+    padding: 0 0.5rem; /* 为了保持与默认样式的一致性 */
+}
+
+.icon-spacing {
+    margin-right: 15px; /* Adjust this value as needed */
+}
+
+.custom-breadcrumb {
+    margin-left: 1px; /* 或您想要的任何其他值 */
+}
+
+.border-rounded {
+    border: 1px solid #dee2e6; /* 这是Bootstrap默认的边框颜色 */
+    border-radius: 15px; /* 这将使按钮的边框变得圆润 */
+}
+
+.no-underline {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.custom-breadcrumb .breadcrumb-item a {
+    color: red !important;
+    text-decoration: none !important;
+}
+
+.course-sidebar {
+    padding-right: 5px; /* 调整右侧的padding */
+}
+
+.main-content {
+    padding-left: 5px; /* 调整左侧的padding */
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.custom-padding {
+    padding-right: 15px; /* 或您想要的任何其他值 */
+}
+
+.custom-grid {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+}
