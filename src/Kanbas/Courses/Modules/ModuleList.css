@@ -1,0 +1,67 @@
+/* 顶部的按钮样式 */
+.module-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.module-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+
+
+/* 前三个按钮的灰色背景 */
+.module-buttons button:not(:last-child) {
+    background-color: #eee;
+}
+
+/* 最后一个按钮的红色背景 */
+.module-buttons button:last-child {
+    background-color: #f00;
+    color: #fff;
+}
+
+/* 分隔线 */
+.list-group {
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px 0;
+    position: relative;
+}
+
+.list-group-item h3 {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0;
+}
+
+.list-group-item h3::before {
+    content: "▶";  /* 这个是一个小的箭头，表示可展开的模块 */
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.list-group-item h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.list-group-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+}
+

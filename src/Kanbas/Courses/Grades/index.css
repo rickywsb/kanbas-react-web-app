@@ -1,0 +1,25 @@
+/* 表头样式 */
+.table thead {
+    background-color: #f2f2f2; /* 浅灰色背景 */
+    font-weight: bold;
+}
+
+.table th, .table td {
+    padding: 10px 15px; /* 调整单元格间距 */
+    border: 1px solid #e0e0e0; /* 给每个单元格添加边框 */
+}
+
+/* 斑马条纹行样式 */
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* 更淡的灰色背景 */
+}
+
+/* 悬停效果 */
+.table tbody tr:hover {
+    background-color: #e0e0e0; /* 当鼠标悬停时的背景颜色 */
+}
+
+.table-responsive {
+    overflow-x: auto; /* 如果表格宽度超过其容器，则添加水平滚动 */
+    margin-top: 20px; /* 添加上部的空间 */
+}
