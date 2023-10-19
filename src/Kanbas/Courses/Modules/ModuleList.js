@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { FaCheck, FaChevronDown, FaPlus, FaEllipsisV } from 'react-icons/fa';
+
 import db from "../../Database";
 import "./ModuleList.css";
 
@@ -24,7 +26,8 @@ function ModuleList() {
                 <button>Collapse All</button>
                 <button>View Progress</button>
                 <button>Publish All</button>
-                <button>+ Module</button>
+                <button className="add-module-btn">+ Module</button>
+                <button >⋮</button> {/* 三个竖点的icon */}
             </div>
 
             <ul className="list-group">
@@ -33,15 +36,25 @@ function ModuleList() {
          .filter((module) => module.course === courseId)
          .map((module, index) => (
            <li key={index} className="list-group-item">
-             <h3 onClick={() => {
-               if (expandedModule === module.name) {
-                 setExpandedModule(null);
-               } else {
-                 setExpandedModule(module.name);
-               }
-             }}>
-               {module.name}
-             </h3>
+            <div className="module-header">
+                <h3 onClick={() => {
+                  if (expandedModule === module.name) {
+                    setExpandedModule(null);
+                  } else {
+                    setExpandedModule(module.name);
+                  }
+                }}>
+                  {module.name}
+                </h3>
+
+                <div className="module-icons">
+                  <button className="icon-btn"><FaCheck color="green" /></button> {/* 绿色对号 */}
+                  <button className="icon-btn"><FaChevronDown /></button>          {/* 下拉箭头 */}
+                  <button className="icon-btn"><FaPlus /></button>                 {/* 加号 */}
+                  <button className="icon-btn"><FaEllipsisV /></button>            {/* 三个竖点的icon */}
+                </div>
+
+            </div> 
              <p>{module.description}</p>
              {
                expandedModule === module.name && module.lessons && (  // 根据状态来决定是否展示课程内容

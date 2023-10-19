@@ -1,29 +1,40 @@
-/* 顶部的按钮样式 */
 .module-buttons {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    gap: 10px;
+    align-items: center;
 }
 
 .module-buttons button {
-    padding: 8px 12px;
+    background-color: #d3d3d3;  /* 灰色背景 */
     border: none;
-    border-radius: 5px;
+    padding: 10px 15px;         /* 给按钮添加一些padding，使其更加美观 */
     cursor: pointer;
-    transition: background-color 0.2s;
+    border-radius: 5px;         /* 为按钮添加轻微的圆角 */
+    color: #333;                /* 文本颜色 */
+    transition: 0.3s;          /* 过渡效果，使hover效果更平滑 */
 }
 
 
-
-/* 前三个按钮的灰色背景 */
-.module-buttons button:not(:last-child) {
-    background-color: #eee;
+.module-buttons .add-module-btn {
+    background-color: red;     /* 红色背景 */
+    color: white;              /* 文本颜色为白色 */
 }
 
-/* 最后一个按钮的红色背景 */
-.module-buttons button:last-child {
-    background-color: #f00;
-    color: #fff;
+.module-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 将图标居右 */
+    gap: 10px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 5px;
+    display: flex;       /* 使图标垂直居中 */
+    align-items: center; 
 }
 
 /* 分隔线 */
