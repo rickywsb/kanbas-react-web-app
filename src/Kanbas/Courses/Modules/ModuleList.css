@@ -1,78 +1,102 @@
-.module-buttons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.module-list-container {
+    /* 分隔线 */
+    .list-group {
+        border-top: 1px solid #ddd;
+        margin-top: 10px;
+    }
+
+    .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .input-section .module-inputs {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        gap: 10px;
+    }
+
+    .input-section .module-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .course-section .course-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 70%;
+    }
+
+    .module-buttons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .list-group-item h3 {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .list-group-item h3::before {
+        content: "▶";  /* 这个是一个小的箭头，表示可展开的模块 */
+        display: inline-block;
+        margin-right: 10px;
+        transition: transform 0.3s;
+    }
+
+    .list-group-item h4 {
+        /* margin-top: 10px; */
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .list-group-item p {
+        margin: 0;
+        font-size: 14px;
+        color: #888;
+    }
+
+    /* Button Styles */
+
+    .module-buttons button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-right: 10px;
+        outline: none;
+    }
+
+    .update-module-btn {
+        background-color: #007bff;  /* 蓝色背景 */
+        color: white;
+    }
+
+    .delete-module-btn {
+        background-color: red;     /* 红色背景 */
+        color: white;
+    }
+
+    .add-module-btn {
+        background-color: #28a745;  /* 绿色背景 */
+        color: white;
+    }
+
+    .edit-module-btn {
+        background-color: green;  /* 蓝色背景 */
+        color: white;
+    }
 }
-
-.module-buttons button {
-    background-color: #d3d3d3;  /* 灰色背景 */
-    border: none;
-    padding: 10px 15px;         /* 给按钮添加一些padding，使其更加美观 */
-    cursor: pointer;
-    border-radius: 5px;         /* 为按钮添加轻微的圆角 */
-    color: #333;                /* 文本颜色 */
-    transition: 0.3s;          /* 过渡效果，使hover效果更平滑 */
-}
-
-
-.module-buttons .add-module-btn {
-    background-color: red;     /* 红色背景 */
-    color: white;              /* 文本颜色为白色 */
-}
-
-.module-icons {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* 将图标居右 */
-    gap: 10px;
-}
-
-.icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    margin-left: 5px;
-    display: flex;       /* 使图标垂直居中 */
-    align-items: center; 
-}
-
-/* 分隔线 */
-.list-group {
-    border-top: 1px solid #ddd;
-    margin-top: 10px;
-}
-
-.list-group-item {
-    border: none;
-    padding: 10px 0;
-    position: relative;
-}
-
-.list-group-item h3 {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 18px;
-    margin: 0;
-}
-
-.list-group-item h3::before {
-    content: "▶";  /* 这个是一个小的箭头，表示可展开的模块 */
-    display: inline-block;
-    margin-right: 10px;
-    transition: transform 0.3s;
-}
-
-.list-group-item h4 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-
-.list-group-item p {
-    margin: 0;
-    font-size: 14px;
-    color: #888;
-}
-
