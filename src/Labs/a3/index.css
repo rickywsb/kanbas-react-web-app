@@ -1,0 +1,29 @@
+/* Button Styles */
+
+.edit-module-btn,
+.update-module-btn {
+    background-color: #007bff;  /* 蓝色背景 */
+    color: white;
+}
+
+.delete-module-btn {
+    background-color: red;     /* 红色背景 */
+    color: white;
+}
+
+.module-buttons button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 10px;
+    outline: none;
+}
+
+.module-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

@@ -8,12 +8,24 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import TopNavigation from "./TopNavigation/TopNavigation";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function Courses({ courses }) {
+function Courses() {
+  const URL = "http://localhost:8000/api/courses";
   const { courseId } = useParams();
-  const {pathname} = useLocation();
-  const [empty, kanbas, courseName, id, screen] = pathname.split("/");
-  const course = courses.find((course) => course._id === courseId);
+  const  [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(
+      `${URL}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
+
+
   return (
     <div>
        

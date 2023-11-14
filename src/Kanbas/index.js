@@ -1,4 +1,4 @@
-
+import axios from "axios";
 import { Route, Routes, Navigate } from "react-router";
 import KanbasNavigation from "./KanbasNavigation";
 import Courses from "./Courses";
@@ -6,34 +6,68 @@ import Courses from "./Courses";
 import Dashboard from "./Dashboard";
 
 import db from "./Database";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import store from "./store/index.js";
 import { Provider } from "react-redux";
 
 
 function Kanbas() {
-  const [courses, setCourses] = useState(db.courses);
+  const [courses, setCourses] = useState([]);
   const [course, setCourse] = useState({
     name: "New Course",      number: "New Number",
     startDate: "2023-09-10", endDate: "2023-12-15",
   });
-  const addNewCourse = () => {
-    setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
+
+  const initialCourseState = {
+    name: "",
+    number: "",
+    startDate: "",
+    endDate: ""
   };
-  const deleteCourse = (courseId) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
+  const URL = "http://localhost:8000/api/courses";
+  const findAllCourses = async () => {
+    const response = await axios.get(URL);
+    setCourses(response.data);
   };
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if (c._id === course._id) {
-          return course;
-        } else {
-          return c;
-        }
-      })
-    );
+  useEffect(() => {
+    findAllCourses();
+  }, []);
+
+
+  const addCourse = async () => {
+    const response = await axios.post(URL, course);
+    setCourses([response.data, ...courses]);
+    setCourse(initialCourseState); // Reset the course to its initial state
   };
+
+  
+  const deleteCourse = async (courseId) => {
+    await axios.delete(`${URL}/${courseId}`);
+    setCourses(courses.filter((c) => c._id !== courseId));
+  };
+
+  const updateCourse = async () => {
+    try {
+        // Update the course on the server
+        const response = await axios.put(`${URL}/${course._id}`, course);
+
+        // Update the course in the local state
+        setCourses(courses.map(c => c._id === course._id ? { ...c, ...course } : c));
+
+        // Optionally, reset the course form or set it to a default state
+        setCourse({
+            name: "",      
+            number: "",
+            startDate: "2023-09-10", 
+            endDate: "2023-12-15",
+        });
+    } catch (error) {
+        console.error("Error updating course:", error);
+        // Handle the error appropriately
+    }
+};
+
+
   return (
     <Provider store={store}>
       <div className="d-flex">
@@ -47,7 +81,7 @@ function Kanbas() {
                 courses={courses}
                 course={course}
                 setCourse={setCourse}
-                addNewCourse={addNewCourse}
+                addNewCourse={addCourse}
                 deleteCourse={deleteCourse}
                 updateCourse={updateCourse}/>
             } />

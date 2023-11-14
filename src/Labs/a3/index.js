@@ -6,6 +6,7 @@ import Styles from "./Styles";
 import ConditionalOutput from "./ConditionalOutput";
 
 import { useSelector } from "react-redux";
+import "./index.css";
 function Assignment3() {
   const { todos } = useSelector((state) => state.todosReducer);
     return (

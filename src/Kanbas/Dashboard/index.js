@@ -43,13 +43,14 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                 Edit
               </button>
               <button
-                className="delete-button"
-                onClick={(event) => {
-                  event.preventDefault();
-                  deleteCourse(courseItem._id);
-                }}>
-                Delete
-              </button>
+              className="delete-button"
+              onClick={(event) => {
+                event.preventDefault();
+                deleteCourse(courseItem._id);
+              }}>
+              Delete
+            </button>
+
             </div>
           ))}
         </div>
