@@ -1,42 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux"; // Importing useDispatch
-import { updateAssignment, addAssignment } from "./assignmentsReducer"; // Import actions
-import db from "../../Database";
+import { getAssignmentById, createAssignment, updateAssignment } from "./client.js";
 
 function AssignmentEditor() {
   const { assignmentId, courseId } = useParams();
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Initialize useDispatch
 
   const [assignmentData, setAssignmentData] = useState({
     title: "",
-    description: "",
-    dueDate: new Date(),
-    availableFromDate: new Date(),
-    availableUntilDate: new Date(),
-    points: 100,
     course: courseId
   });
 
   useEffect(() => {
-    if (assignmentId && assignmentId !== "New") {
-      const assignment = db.assignments.find(a => a._id === assignmentId);
-      if (assignment) {
-        setAssignmentData(assignment);
+    const fetchAssignment = async () => {
+      if (assignmentId && assignmentId !== "New") {
+        try {
+          const assignment = await getAssignmentById(assignmentId);
+          if (assignment) {
+            setAssignmentData(assignment);
+          }
+        } catch (error) {
+          console.error("Error fetching assignment:", error);
+        }
       }
-    }
+    };
+    fetchAssignment();
   }, [assignmentId]);
 
-  const handleSave = () => {
-    if (assignmentId && assignmentId !== "New") {
-      dispatch(updateAssignment(assignmentData)); // Use the updateAssignment action
-    } else {
-      dispatch(addAssignment(assignmentData)); // Use the addAssignment action
+  const handleSave = async () => {
+    try {
+      if (assignmentId && assignmentId !== "New") {
+        await updateAssignment(courseId, assignmentData);
+      } else {
+        await createAssignment(courseId, assignmentData);
+      }
+      navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+    } catch (error) {
+      console.error("Error saving assignment:", error);
     }
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
-
+  
   const handleInputChange = (field) => (e) => {
     setAssignmentData({
       ...assignmentData,
@@ -52,40 +55,7 @@ function AssignmentEditor() {
         onChange={handleInputChange("title")}
         className="form-control mb-2" 
       />
-      <textarea
-        value={assignmentData.description}
-        onChange={handleInputChange("description")}
-        className="form-control mb-2"
-        placeholder="Assignment Description"
-      ></textarea>
-      <label>Points</label>
-      <input 
-        type="number" 
-        value={assignmentData.points}
-        onChange={handleInputChange("points")}
-        className="form-control mb-2" 
-      />
-      <label>Due Date</label>
-      <input 
-        type="date" 
-        value={assignmentData.dueDate}
-        onChange={handleInputChange("dueDate")}
-        className="form-control mb-2" 
-      />
-      <label>Available From</label>
-      <input 
-        type="date" 
-        value={assignmentData.availableFromDate}
-        onChange={handleInputChange("availableFromDate")}
-        className="form-control mb-2" 
-      />
-      <label>Available Until</label>
-      <input 
-        type="date" 
-        value={assignmentData.availableUntilDate}
-        onChange={handleInputChange("availableUntilDate")}
-        className="form-control mb-2" 
-      />
+      {/* 其他输入字段和按钮 */}
       <button onClick={() => navigate(`/Kanbas/Courses/${courseId}/Assignments`)} className="btn btn-danger">
         Cancel
       </button>
