@@ -1,9 +1,10 @@
-import axios from "axios";
-const API_BASE = process.env.REACT_APP_API_BASE;
+
+import axios from 'axios';
+// Use the environment variable to set the base URL
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:8000/api';
 const COURSES_URL = `${API_BASE}/courses`;
-// const COURSES_URL = "https://kanbas-node-server-app-sibo.onrender.com/api/courses";
-// const MODULES_URL = "https://kanbas-node-server-app-sibo.onrender.com/api/modules";
 const MODULES_URL = `${API_BASE}/modules`;
+
 export const deleteModule = async (moduleId) => {
   const response = await axios
     .delete(`${MODULES_URL}/${moduleId}`);

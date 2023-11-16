@@ -24,7 +24,11 @@ function Kanbas() {
     startDate: "",
     endDate: ""
   };
-  const URL = "https://kanbas-node-server-app-sibo.onrender.com/api/courses";
+
+  const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:8000/api';
+  const URL = `${API_BASE}/courses`;
+
+
   const findAllCourses = async () => {
     const response = await axios.get(URL);
     setCourses(response.data);

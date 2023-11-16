@@ -12,7 +12,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Courses() {
-  const URL = "https://kanbas-node-server-app-sibo.onrender.com/api/courses";
+
+  const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:8000/api';
+  const URL = `${API_BASE}/courses`;
+
   const { courseId } = useParams();
   const  [course, setCourse] = useState({});
   const findCourseById = async (courseId) => {
