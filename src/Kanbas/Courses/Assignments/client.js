@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://kanbas-node-server-app-sibo.onrender.com/api";
 
 export const getAssignments = async (courseId) => {
-    const response = await axios.get(`http://localhost:8000/api/courses/${courseId}/assignments`);
+    const response = await axios.get(`https://kanbas-node-server-app-sibo.onrender.com/api/courses/${courseId}/assignments`);
     return response.data;
   };
 
@@ -13,7 +13,7 @@ export const createAssignment = async (courseId, assignment) => {
 };
 
 export const deleteAssignment = async (assignmentId) => {
-    const response = await axios.delete(`http://localhost:8000/api/assignments/${assignmentId}`);
+    const response = await axios.delete(`https://kanbas-node-server-app-sibo.onrender.com/api/assignments/${assignmentId}`);
     return response.data;
 };
 
