@@ -2,10 +2,8 @@ import axios from "axios";
 import { Route, Routes, Navigate } from "react-router";
 import KanbasNavigation from "./KanbasNavigation";
 import Courses from "./Courses";
-// import Account from "./Account";
 import Dashboard from "./Dashboard";
 
-import db from "./Database";
 import { useState, useEffect } from "react";
 import store from "./store/index.js";
 import { Provider } from "react-redux";
@@ -39,11 +37,21 @@ function Kanbas() {
 
 
   const addCourse = async () => {
-    const response = await axios.post(URL, course);
-    setCourses([response.data, ...courses]);
-    setCourse(initialCourseState); // Reset the course to its initial state
+    try {
+      console.log("Sending course data:", course); // Debugging
+      const response = await axios.post(URL, course, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log("Added Course:", response.data); // Debugging
+      setCourses([response.data, ...courses]);
+      setCourse(initialCourseState); // Reset the course to its initial state
+    } catch (error) {
+      console.error("Error adding course:", error);
+    }
   };
-
+  
   
   const deleteCourse = async (courseId) => {
     await axios.delete(`${URL}/${courseId}`);
