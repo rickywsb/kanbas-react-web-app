@@ -27,6 +27,7 @@ function AssignmentUpdater() {
         console.log(data);
     };
 
+    
     return (
         <div>
             <input
