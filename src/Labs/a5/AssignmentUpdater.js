@@ -5,7 +5,7 @@ function AssignmentUpdater() {
     const [completed, setCompleted] = useState(false);
 
     // 定义基础URL
-    const baseUrl = "http://localhost:8000";
+    const baseUrl = "https://kanbas-node-server-app-sibo.onrender.com";
 
     const handleScoreChange = (e) => {
         setScore(e.target.value);
