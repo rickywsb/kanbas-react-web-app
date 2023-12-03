@@ -8,19 +8,19 @@ import {Routes, Route, Navigate} from "react-router";
 function App() {
   return (
     <HashRouter>
-      <div>
-       
-         <Routes>
-            <Route path="/" element={<Navigate to="project" />} />
-
-            <Route path="/hello"    element={<HelloWorld/>}/>
-            <Route path="/Labs/*"   element={<Labs/>}/>
-            <Route path="/Kanbas/*" element={<Kanbas/>}/>
-            <Route path="/project/*" element={<Project />} />
-
-        </Routes>
-      </div>
-    </HashRouter>
+    <div>
+      <Routes>
+        <Route path="/" element={<Navigate to="Kanbas" />} />
+        <Route path="/Hello" element={<HelloWorld />} />
+        <Route path="/Labs/*" element={<Labs />} />
+        <Route path="/Kanbas/*" element={<Kanbas />} />
+        <Route path="/Lectures" element={<StateManagement />} />
+      </Routes>
+      {/* {screen === "Hello" && <HelloWorld />}
+      {screen === "Labs" && <Labs />}
+      {screen === "Kanbas" && <Kanbas />} */}
+    </div>
+  </HashRouter>
   );
 }
 
