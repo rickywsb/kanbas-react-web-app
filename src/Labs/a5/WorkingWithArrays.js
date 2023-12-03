@@ -20,7 +20,7 @@ function WorkingWithArrays() {
       }, []);
     
     
-    const API = "http://localhost:8000/a5/todos";
+    const API = "https://kanbas-node-server-app-sibo.onrender.com/a5/todos";
     const [id, setId] = useState('');
     const [description, setDescription] = useState('');
     const [completed, setCompleted] = useState(false);
@@ -41,7 +41,7 @@ function WorkingWithArrays() {
 
       const updateDescription = async (id) => {
         try {
-            await axios.patch(`http://localhost:8000/todos/${id}/description`, { description });
+            await axios.patch(`https://kanbas-node-server-app-sibo.onrender.com/todos/${id}/description`, { description });
             // Handle success
         } catch (error) {
             // Handle error
@@ -50,7 +50,7 @@ function WorkingWithArrays() {
 
     const updateCompleted = async (id) => {
         try {
-            await axios.patch(`http://localhost:8000/todos/${id}/completed`, { completed });
+            await axios.patch(`https://kanbas-node-server-app-sibo.onrender.com/todos/${id}/completed`, { completed });
             // Handle success
         } catch (error) {
             // Handle error
