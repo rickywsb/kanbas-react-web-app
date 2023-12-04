@@ -1,77 +1,70 @@
 import * as client from "./client";
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "./reducer";
 function Account() {
-  const { id } = useParams();
-
-  const [account, setAccount] = useState(null);
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const findUserById = async (id) => {
-    const user = await client.findUserById(id);
-    setAccount(user);
+  const dispatch = useDispatch();
+  const fetchUser = async () => {
+    try {
+      const user = await client.account();
+      setUser(user);
+    } catch (error) {
+      navigate("/project/signin");
+    }
   };
-
-  const save = async () => {
-    await client.updateUser(account);
+  const updateUser = async () => {
+    const status = await client.updateUser(user._id, user);
   };
   const signout = async () => {
-    await client.signout();
+    const status = await client.signout();
+    dispatch(setCurrentUser(null));
     navigate("/project/signin");
   };
-
-
-  const fetchAccount = async () => {
-    const account = await client.account();
-    setAccount(account);
-  };
   useEffect(() => {
-    if (id) {
-      findUserById(id);
-    } else {
-      fetchAccount();
-    }
+    fetchUser();
   }, []);
-
   return (
-    <div className="w-50">
+    <div>
       <h1>Account</h1>
-      {account && (
+      {user && (
         <div>
-          <input value={account.password}
-            onChange={(e) => setAccount({ ...account,
-              password: e.target.value })}/>
-          <input value={account.firstName}
-            onChange={(e) => setAccount({ ...account,
-              firstName: e.target.value })}/>
-          <input value={account.lastName}
-            onChange={(e) => setAccount({ ...account,
-              lastName: e.target.value })}/>
-          <input value={account.dob}
-            onChange={(e) => setAccount({ ...account,
-              dob: e.target.value })}/>
-          <input value={account.email}
-            onChange={(e) => setAccount({ ...account,
-              email: e.target.value })}/>
-          <select onChange={(e) => setAccount({ ...account,
-              role: e.target.value })}>
-            <option value="USER">User</option>
-            <option value="ADMIN">Admin</option>
-            <option value="FACULTY">Faculty</option>
-            <option value="STUDENT">Student</option>
-          </select>
-          <button onClick={save}>
-                Save
-            </button>
-            <button onClick={signout}>
-                Signout
-            </button>
-            <Link to="/project/admin/users" className="btn btn-warning w-100">
-                Users
+          <p>Username: {user.username}</p>
+          <input
+            type="email"
+            className="form-control"
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+          />
+          <input
+            type="text"
+            className="form-control"
+            value={user.firstName}
+            onChange={(e) => setUser({ ...user, firstName: e.target.value })}
+          />
+          <input
+            type="text"
+            className="form-control"
+            value={user.lastName}
+            onChange={(e) => setUser({ ...user, lastName: e.target.value })}
+          />
+          <button onClick={updateUser} className="btn btn-primary">
+            Update
+          </button>
+          <button onClick={signout} className="btn btn-danger">
+            Sign Out
+          </button>
+          {user.role === "ADMIN" && (
+            <Link to="/project/admin/users" className="btn btn-warning">
+              Users
             </Link>
+          )}
         </div>
       )}
     </div>
   );
 }
+
 export default Account;
