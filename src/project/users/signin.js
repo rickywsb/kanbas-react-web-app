@@ -13,7 +13,7 @@ function Signin() {
       <h1>Signin</h1>
       <input value={credentials.username} onChange={(e) => setCredentials({...credentials, username: e.target.value})}/>
       <input value={credentials.password} onChange={(e) => setCredentials({...credentials, password: e.target.value})}/>
-      <button onClick={signin}> Signin </button>
+      <button onClick={signin} className="btn btn-primary my-2"> Signin </button>
     </div>
   );
 }
